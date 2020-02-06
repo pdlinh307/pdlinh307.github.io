@@ -4,12 +4,12 @@ Tôi đi ứng tuyển vị trí `Data Engineer`, nhà tuyển dụng bảo ở 
 
 Dưới đây là yêu cầu của bài test. **Cán bộ ra đề không giải thích gì thêm.**
 
-![Yêu cầu của bài test](../img/requirements.png)
+![Yêu cầu của bài test](img/requirements.png)
 
 Nội dung rất súc tích, mấy đồng chí ứng tuyển (như tôi) tha hồ tưởng tượng xem output đến đâu thì vừa ý cán bộ. Tôi đang nghĩ xem nên làm gì thì em HR trẻ đẹp chat động viên:
 
-![hr dong vien 1](../img/hr2.png)
-![hr dong vien 2](../img/hr1.png)
+![hr dong vien 1](img/hr2.png)
+![hr dong vien 2](img/hr1.png)
 
 Thôi thì kệ. Tôi làm bằng cả trái tim, nếu không đúng ý thì chắc cũng chạm tới lòng trắc ẩn của cán bộ mà vớt cho tôi được vào vòng nói chuyện. Tôi tự hiểu, `dịp khác` đồng nghĩa với `không bao giờ`.
 
@@ -23,7 +23,7 @@ Về cơ bản, yêu cầu gồm 2 phần:
 
 Yêu cầu dùng ELK stack nên tôi cũng chẳng mất công băn khoăn lựa chọn giải pháp. 
 
-![data flow](../img/data-flow.png)
+![data flow](img/data-flow.png)
 
 ### Dataset
 
