@@ -98,7 +98,7 @@ Kích thước file 2,4G:
 ```
 
 Vài dòng dữ liệu đầu tiên:
-```json
+```
 [
     {
         "vendor_id": "CMT",
