@@ -315,12 +315,16 @@ Tôi cũng thực hiện tạo một số chart về vài trường dữ liệu 
 
 ## Yêu cầu 2
 
+Với bài test này, chắc dụng ý của cán bộ ra đề là muốn ứng viên sử dụng công cụ [concource-ci](https://concourse-ci.org/) để automate tất cả các bước tôi đã làm ở trên bằng cách: định nghĩa ra 1 file kiểu `Configuration As Code` mô tả toàn bộ quá trình các bước theo syntax, rồi chạy cái file đó và đợi thành quả.
+
+Tôi thì khá thực tế, việc automate có lợi khi áp dụng cho công việc có tính lặp lại cao. Trong hoàn cảnh hiện tại, chắc chắn tôi chỉ làm bài hiring-test này đúng 1 lần, chưa kể mọi tham số cấu hình trong bài test đều tĩnh. Không tận dụng đúng giá trị của công cụ nên tôi chọn phương án bỏ qua.
+
+Nếu mục đích là kiểm tra xem có thành thạo sử dụng công cụ automate không, thì tôi khẳng định là tôi chưa sử dụng concource-ci bao giờ.
 
 # Tổng kết
 
 - [Link github](https://github.com/pdlinh307/pdlinh307.github.io/tree/master/tk)
 - Tôi giải quyết yêu cầu 1 mất 5 tiếng, trong đó hơn 2 tiếng ngồi đợi và 30 phút để tạo ra vài cái chart
-- Yêu cầu 2 tôi làm mất 4 tiếng, trong đó 2 tiếng là ngồi tìm hiểu thằng concource-ci, thú thật là tôi chưa sử dụng bao giờ
 - Cuối cùng, nhào nặn file markdown này làm tôi mất 6 tiếng cuộc đời, viết-xóa-viết-xóa-viết-xóa ...
 - Trước Tết, được mạnh thường quân tài trợ, tôi có thi [chứng chỉ này](dp100-cert.pdf) của M$, tài khoản trial vẫn dư ít $ nên sẵn tiện tôi deploy kết quả bài test lên [đây](http://104.43.12.201:5601/goto/193265a3008792027360ae96ed87115d) để tăng phần trực quan, biết đâu cán bộ chấm bài cho tôi ít điểm cộng
 - Tôi sẽ update kết quả bài test này, để nếu tôi có tạch thì ai đó đọc được post này tránh lặp lại những gì tôi đã làm
