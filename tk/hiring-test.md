@@ -1,4 +1,7 @@
-# Bối cảnh
+Tôi làm test tuyển dụng
+=======================
+
+## Bối cảnh
 
 Tôi đi ứng tuyển vị trí `Data Engineer`, nhà tuyển dụng bảo ở nhà làm bài test, ok rồi mới nói chuyện tiếp, not ok thì hẹn `dịp khác`.
 
@@ -13,14 +16,14 @@ Nội dung rất súc tích, mấy đồng chí ứng tuyển (như tôi) tha h�
 
 Thôi thì kệ. Tôi làm bằng cả trái tim, nếu không đúng ý thì chắc cũng chạm tới lòng trắc ẩn của cán bộ mà vớt cho tôi được vào vòng nói chuyện. Tôi tự hiểu, `dịp khác` đồng nghĩa với `không bao giờ`.
 
-# Bài làm
+## Bài làm
 
 Về cơ bản, yêu cầu gồm 3 phần:
 1. build a data pipeline
 2. automate the data pipeline
 3. write this file
 
-## Yêu cầu 1
+### Yêu cầu 1
 
 Cán bộ bảo dùng ELK stack nên tôi cũng chẳng mất công băn khoăn lựa chọn giải pháp. 
 
@@ -28,7 +31,7 @@ Cán bộ bảo dùng ELK stack nên tôi cũng chẳng mất công băn khoăn 
 
 > Tôi bỏ qua không trình bày bước thiết lập môi trường, cài đặt và cấu hình cơ bản cho ELK stack.
 
-### Dataset
+#### Dataset
 
 Sau khi download và giải nén sẽ được 1 file `nyc_taxi_data_2014.csv`. 
 
@@ -186,7 +189,7 @@ Vài dòng dữ liệu đầu tiên:
 ]
 ```
 
-### Dataset <-- Logstash --> Elasticsearch
+#### Dataset <-- Logstash --> Elasticsearch
 
 Pipeline của Logstash rất đơn giản, đi từ input, qua filter rồi ra output. Ở mỗi step, có vô vàn plugin để sử dụng cho các nhu cầu khác nhau. 
 
@@ -194,7 +197,7 @@ Pipeline của Logstash rất đơn giản, đi từ input, qua filter rồi ra 
 
 Với yêu cầu của bài test, một cách tự nhiên, input, filter và output plugin cần lựa chọn tương ứng lần lượt là `file`, `csv` và `elasticsearch`.
 
-#### Input
+##### Input
 
 Đọc toàn bộ file từ đầu. Vì là file tĩnh, dữ liệu không thay đổi nên có thể bỏ qua cấu hình cơ chế đọc incrementally. 
 
@@ -215,7 +218,7 @@ input {
 }
 ```
 
-#### Filter
+##### Filter
 
 Dữ liệu đọc từ input đang ở dạng raw string, tôi sử dụng filter plugin là `csv` để parse ra các trường thông tin tương ứng.
 
@@ -242,7 +245,7 @@ filter {
 }
 ```
 
-#### Output
+##### Output
 
 Có một số điều cần chú ý ở đây:
 - dữ liệu đầu vào có nhiều type khác nhau: string, datetime, number, geolocations
@@ -301,7 +304,7 @@ output {
 }
 ```
 
-### Kibana
+#### Kibana
 
 Kết quả đọc dữ liệu được visualize trên giao diện Kibana. 
 
@@ -313,7 +316,7 @@ Tôi cũng thực hiện tạo một số chart về vài trường dữ liệu 
 
 ![dashboard](img/data-dashboard.png)
 
-## Yêu cầu 2
+### Yêu cầu 2
 
 Với bài test này, chắc dụng ý của cán bộ ra đề là muốn ứng viên sử dụng công cụ [concource-ci](https://concourse-ci.org/) để automate tất cả các bước tôi đã làm ở trên bằng cách: định nghĩa ra 1 file kiểu `Configuration As Code` mô tả toàn bộ quá trình các bước theo syntax, rồi chạy cái file đó và đợi thành quả.
 
@@ -321,7 +324,7 @@ Tôi thì khá thực tế, việc automate có lợi khi áp dụng cho công v
 
 Nếu mục đích là kiểm tra xem có thành thạo sử dụng công cụ automate không, thì tôi khẳng định là tôi chưa sử dụng concource-ci bao giờ.
 
-# Tổng kết
+## Tổng kết
 
 - [Link github](https://github.com/pdlinh307/pdlinh307.github.io/tree/master/tk)
 - Tôi giải quyết yêu cầu 1 mất 5 tiếng, trong đó hơn 2 tiếng ngồi đợi và 30 phút để tạo ra vài cái chart
