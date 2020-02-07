@@ -303,10 +303,23 @@ output {
 
 ### Kibana
 
-## 2. Automate
+Kết quả đọc dữ liệu được visualize trên giao diện Kibana. 
+
+![histogram](img/input-data.png)
+
+Mất ~2,5h để input ~15 triệu bản ghi vào CSDL => trung bình 100k events/min. Tốc độ này được với cấu hình server là 2(v)cpus, 4G RAM. Vì thời gian có hạn, nên tôi chưa thử tối ưu tham số thêm xem có nâng được đáng kể tốc độ không.
+
+Tôi cũng thực hiện tạo một số chart về vài trường dữ liệu (mà tôi nghĩ là) quan trọng trong dataset này.
+
+![dashboard](img/data-dashboard.png)
+
+## Yêu cầu 2
 
 
 # Tổng kết
 
-- Giải quyết vấn đề kỹ thuật mất 2 tiếng, nhào nặn cái file markdown này mất 6 tiếng.
-- 
+- Tôi giải quyết yêu cầu 1 mất 5 tiếng, trong đó hơn 2 tiếng ngồi đợi và 30 phút để tạo ra vài cái chart
+- Yêu cầu 2 tôi làm mất 4 tiếng, trong đó 2 tiếng là ngồi tìm hiểu thằng concource-ci, thú thật là tôi chưa sử dụng bao giờ
+- Cuối cùng, nhào nặn file markdown này làm tôi mất 6 tiếng cuộc đời, viết-xóa-viết-xóa-viết-xóa ...
+- Trước Tết, tôi có thi [chứng chỉ này](dp100-cert.pdf) của M$, tài khoản trial còn dư ít $ nên sẵn tiện tôi deploy kết quả bài test lên [đây](http://104.43.12.201:5601/goto/ce75d97549515b776d8a6341c4def908) để tăng phần trực quan, biết đâu cán bộ chấm bài cho tôi ít điểm cộng
+- Tôi sẽ update kết quả bài test này lên đầu, để nếu tôi có tạch thì ai đó đọc được post này tránh lặp lại những gì tôi đã làm.
