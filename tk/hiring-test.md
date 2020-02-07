@@ -318,6 +318,7 @@ Tôi cũng thực hiện tạo một số chart về vài trường dữ liệu 
 
 # Tổng kết
 
+- [Link github](https://github.com/pdlinh307/pdlinh307.github.io/tree/master/tk)
 - Tôi giải quyết yêu cầu 1 mất 5 tiếng, trong đó hơn 2 tiếng ngồi đợi và 30 phút để tạo ra vài cái chart
 - Yêu cầu 2 tôi làm mất 4 tiếng, trong đó 2 tiếng là ngồi tìm hiểu thằng concource-ci, thú thật là tôi chưa sử dụng bao giờ
 - Cuối cùng, nhào nặn file markdown này làm tôi mất 6 tiếng cuộc đời, viết-xóa-viết-xóa-viết-xóa ...
