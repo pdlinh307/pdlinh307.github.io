@@ -217,7 +217,7 @@ input {
 
 #### Filter
 
-Dữ liệu đọc từ input mới ở dạng raw string, tôi sử dụng filter plugin là `csv` để parse ra các trường thông tin tương ứng.
+Dữ liệu đọc từ input đang ở dạng raw string, tôi sử dụng filter plugin là `csv` để parse ra các trường thông tin tương ứng.
 
 Tôi tạo thêm 2 trường mới là `pickup_location` và `dropoff_location` để lưu tọa độ điểm đón/trả khách theo kiểu dữ liệu [geo_point](https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html) của elasticsearch. Với kiểu dữ liệu này, Kibana sẽ dễ dàng thực hiện visualize trên bản đồ một cách trực quan.
 
@@ -249,7 +249,7 @@ Có một số điều cần chú ý ở đây:
 - muốn sử dụng hiệu quả công cụ analytic, dữ liệu cần được insert đúng định dạng vào database
 - số lượng bản ghi khá lớn, sai 1 li, phải làm lại từ đầu là cũng hơi mệt.
 
-Để giải quyết, tôi chọn cách tạo sẵn index và mapping cho index đó trong elasticsearch (schema on write).
+Để giải quyết, tôi chọn cách tạo sẵn index và mapping cho index đó trong elasticsearch.
 
 ```sh
 curl -X PUT "localhost:9200/2014-taxi-trip?pretty" -H 'Content-Type: application/json' -d'
@@ -307,7 +307,7 @@ Kết quả đọc dữ liệu được visualize trên giao diện Kibana.
 
 ![histogram](img/input-data.png)
 
-Mất ~2,5h để input ~15 triệu bản ghi vào CSDL => trung bình 100k events/min. Tốc độ này được với cấu hình server là 2(v)cpus, 4G RAM. Vì thời gian có hạn, nên tôi chưa thử tối ưu tham số thêm xem có nâng được đáng kể tốc độ không.
+Mất ~2,5h để input ~15 triệu bản ghi vào CSDL => trung bình 100k events/min. Tốc độ này đạt được với cấu hình server là 2(v)cpus, 4G RAM. Vì thời gian có hạn, nên tôi chưa thử tối ưu tham số thêm xem có nâng được đáng kể tốc độ không.
 
 Tôi cũng thực hiện tạo một số chart về vài trường dữ liệu (mà tôi nghĩ là) quan trọng trong dataset này.
 
@@ -321,5 +321,6 @@ Tôi cũng thực hiện tạo một số chart về vài trường dữ liệu 
 - Tôi giải quyết yêu cầu 1 mất 5 tiếng, trong đó hơn 2 tiếng ngồi đợi và 30 phút để tạo ra vài cái chart
 - Yêu cầu 2 tôi làm mất 4 tiếng, trong đó 2 tiếng là ngồi tìm hiểu thằng concource-ci, thú thật là tôi chưa sử dụng bao giờ
 - Cuối cùng, nhào nặn file markdown này làm tôi mất 6 tiếng cuộc đời, viết-xóa-viết-xóa-viết-xóa ...
-- Trước Tết, tôi có thi [chứng chỉ này](dp100-cert.pdf) của M$, tài khoản trial còn dư ít $ nên sẵn tiện tôi deploy kết quả bài test lên [đây](http://104.43.12.201:5601/goto/ce75d97549515b776d8a6341c4def908) để tăng phần trực quan, biết đâu cán bộ chấm bài cho tôi ít điểm cộng
-- Tôi sẽ update kết quả bài test này lên đầu, để nếu tôi có tạch thì ai đó đọc được post này tránh lặp lại những gì tôi đã làm.
+- Trước Tết, được mạnh thường quân tài trợ, tôi có thi [chứng chỉ này](dp100-cert.pdf) của M$, tài khoản trial vẫn dư ít $ nên sẵn tiện tôi deploy kết quả bài test lên [đây](http://104.43.12.201:5601/goto/193265a3008792027360ae96ed87115d) để tăng phần trực quan, biết đâu cán bộ chấm bài cho tôi ít điểm cộng
+- Tôi sẽ update kết quả bài test này, để nếu tôi có tạch thì ai đó đọc được post này tránh lặp lại những gì tôi đã làm
+- Lời cuối là dành cho em HR nhắc tới ở trên: lời cảm ơn và xin lỗi. Cảm ơn vì em đã kết nối, tư vấn và giục giã tôi suốt gần 2 tháng qua, vẫn biết đó là công việc của em nhưng tôi mà fail thì thật ngại với em quá. Còn xin lỗi vì tôi sai hẹn nhiều lần trong quá trình process tuyển dụng, là tôi chắc tôi cho chim cút rồi.
