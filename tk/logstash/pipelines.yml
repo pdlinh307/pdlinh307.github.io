@@ -1,0 +1,2 @@
+- pipeline.id: nyc_taxi_trip
+  path.config: "/etc/logstash/conf.d/nyc_taxi_trip.conf"
